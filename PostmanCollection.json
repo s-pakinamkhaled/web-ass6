@@ -1,0 +1,63 @@
+{
+    "info": {
+      "_postman_id": "your-postman-id",
+      "name": "Express Authentication API",
+      "description": "Postman collection to test authentication and authorization API"
+    },
+    "item": [
+      {
+        "name": "Register User",
+        "request": {
+          "method": "POST",
+          "url": {
+            "raw": "http://localhost:5000/api/auth/register",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "auth", "register"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\"username\": \"john_doe\", \"email\": \"john.doe@example.com\", \"password\": \"password123!\", \"role\": \"user\"}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Login User",
+        "request": {
+          "method": "POST",
+          "url": {
+            "raw": "http://localhost:5000/api/auth/login",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "auth", "login"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\"email\": \"john.doe@example.com\", \"password\": \"password123!\"}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Profile",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:5000/api/user/profile",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "user", "profile"]
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ]
+        },
+        "response": []
+      }
+    ]
+  }
+  
